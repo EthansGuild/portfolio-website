@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* global variables */
+            :root {
+                --lightModeForeground: url("circuitboard.png");
+                --lightModeBG: white;
+                --lightModeMouse: rgba(200,255,200,1);
+
+                --darkModeForeground: url("circuitboardINVERTED.png");
+                --darkModeBG: rgba(0,0,0,1);
+                --darkModeMouse: rgba(0,25,0,1);
+            }
+
+            /* remove margin (outside) and padding (inside) on everything */
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                /* use light mode by default */
+                --curModeForeground: var(--lightModeForeground);
+                --curModeBG: var(--lightModeBG);
+                --curModeMouse: var(--lightModeMouse);
+
+                /* gradient is offscreen until JS updates it */
+                --mouseX: -100%;
+                --mouseY: -100%;
+                
+                background:
+                    /* top layer */
+                    var(--curModeForeground),
+                    
+                    radial-gradient(
+                        circle 500px at var(--mouseX) var(--mouseY),
+                        var(--curModeMouse),
+                        rgba(0,255,0,0)
+                    ),
+                    
+                    var(--curModeBG);
+                    /* bottom layer */
+                
+                background-repeat: repeat, no-repeat;
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // get mouse position
+                document.addEventListener('mousemove', (e) => {
+                    document.body.style.setProperty('--mouseX', e.clientX + 'px');
+                    document.body.style.setProperty('--mouseY', e.clientY + 'px');
+                });
+
+                // dark mode toggle
+                const darkModeToggle = document.getElementById('darkModeToggle');
+                darkModeToggle.addEventListener('change', () => {
+                    if (darkModeToggle.checked) {
+                        document.body.style.setProperty('--curModeForeground', 'var(--darkModeForeground)');
+                        document.body.style.setProperty('--curModeBG', 'var(--darkModeBG)');
+                        document.body.style.setProperty('--curModeMouse', 'var(--darkModeMouse)');
+                    } else {
+                        document.body.style.setProperty('--curModeForeground', 'var(--lightModeForeground)');
+                        document.body.style.setProperty('--curModeBG', 'var(--lightModeBG)');
+                        document.body.style.setProperty('--curModeMouse', 'var(--lightModeMouse)');
+                    }
+                });
+            });
+        </script>
+        <title>Ethan Battaglia</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="https://ethanbattaglia.com">HOME</a></li>
+                <li><a href="https://ethanbattaglia.com/about">ABOUT ME</a></li> <!-- put all links & resume here -->
+                <li><a href="https://ethanbattaglia.com/experience">EXPERIENCE</a></li> <!-- put timeline of experience here -->
+                <li><a href="https://ethanbattaglia.com/contact">CONTACT</a></li> <!-- form to send an email here -->
+                <li>
+                    <input type="checkbox" id="darkModeToggle" />
+                    <label for="darkModeToggle">Dark Mode</label>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <h1>There's nothing here yet... EXCEPT HYPERLINKS!!?!!?!</h1>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/ethan-battaglia" style="color:rgb(1, 153, 241)";>https://www.linkedin.com/in/ethan-battaglia</a></p>
+            <p>Github: <a href="https://github.com/greagob" style="color:rgb(255, 255, 255)">https://github.com/greagob</a> </p>
+        </div>
+    </body>
+</html>
