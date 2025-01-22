@@ -10,38 +10,52 @@
             :root {
                 --navFont: "Montserrat", serif;
                 --navFontSize: 17px;
+                --headerFont: ;
+                --headerFontSize: ;
+                --pFont: ;
+                --pFontSize: ;
+
 
                 --lightModeForeground: url("circuitboard.png");
-                --lightModeBG: white;
-                --lightModeMouse: rgba(200,255,200,1);
-                --lightModeMouseAlt: rgba(255,200,200,1);
+                --lightModeBG: rgb(245, 245, 245);
+                --lightModeMouseGreen: rgb(200, 245, 200);
+                --lightModeMouseRed: rgb(245,200,200);
+                --lightModeMouseBlue: rgb(200,200,255);
+                --lightModeMouseGray: rgb(229, 229, 229);
                 --lightModeAccent: #ccc;
+                --lightModeGlow: rgba(0,0,0,.1);
                 --lightModeText: #555;
                 --lightModeTextHover: #999;
                 --lightModeTextSelected: black;
 
-                --darkModeForeground: url("circuitboardINVERTED.png");
-                --darkModeBG: black;
-                --darkModeMouse: rgba(0,30,0,1);
-                --darkModeMouseAlt: rgba(50,0,0,1);
+                --darkModeForeground: url("circuitboardDARK.png");
+                --darkModeBG: rgb(12,12,12);
+                --darkModeMouseGreen: rgb(12,30,12);
+                --darkModeMouseRed: rgb(50,12,12);
+                --darkModeMouseBlue: rgb(12,12,50);
+                --darkModeMouseGray: rgba(30,30,30,1);
                 --darkModeAccent: #333;
+                --darkModeGlow: rgba(255,255,255,.1);
                 --darkModeText: #999;
                 --darkModeTextHover: #555;
                 --darkModeTextSelected: white;
 
-                /* gradients are offscreen until JS updates it */
-                --mouseX: -100%;
-                --mouseY: -100%;
-
                 /* use light mode by default */
                 --curModeForeground: var(--lightModeForeground);
                 --curModeBG: var(--lightModeBG);
-                --curModeMouse: var(--lightModeMouse);
-                --curModeMouseAlt: var(--lightModeMouseAlt);
+                --curModeMouseGreen: var(--lightModeMouseGreen);
+                --curModeMouseRed: var(--lightModeMouseRed);
+                --curModeMouseBlue: var(--lightModeMouseBlue);
+                --curModeMouseYellow: var(--lightModeMouseGray);
                 --curModeAccent: var(--lightModeAccent);
+                --curModeGlow: var(--lightModeGlow);
                 --curModeText: var(--lightModeText);
                 --curModeTextHover: var(--lightModeTextHover);
-                --curModeTextSelected: var(--lightModeTextSelected)
+                --curModeTextSelected: var(--lightModeTextSelected);
+                
+                /* gradients are centered until JS updates it */
+                --mouseX: 50%;
+                --mouseY: 50%;
             }
 
             #darkModeToggle {
@@ -71,50 +85,58 @@
                 align-items: center;
             }
 
-            nav ul li {
+            body {
+                height: 100%;
+                width: 100%;
+            }
+
+            body div {
+                width: clamp(250px, 80%, 800px);
+                margin: 50px auto 0 auto;
+                padding: 20px;
+
+                border-radius: 10px;
+            }
+
+            .glow {
+                filter: drop-shadow(0 0 5px var(--curModeGlow));
+            }
+
+            .clickable {
                 display: inline-block;
                 padding: 14px 20px;
                 text-align: center;
+                text-shadow : 0 0 5px var(--curModeBG), 0 0 5px var(--curModeBG),
+                              0 0 10px var(--curModeBG), 0 0 10px var(--curModeBG),
+                              0 0 20px var(--curModeBG), 0 0 20px var(--curModeBG);
 
                 font-family: var(--navFont);
                 font-weight: 800;
                 font-size: var(--navFontSize);
-            }
-
-            nav ul li a {
                 text-decoration: none;
                 color: var(--curModeText);
-                background: var(--curModeBG);
             }
 
-            nav ul li label {
-                text-decoration: none;
-                color: var(--curModeText);
-                background: var(--curModeBG);
+            .clickable:hover {
+                color: var(--curModeTextHover);
+            }
+        
+            .clickable[active="1"] {
+                color: var(--curModeTextSelected);
             }
 
-            nav ul li a:hover {
-                color: var(--curModeTextHover)
+            .clickable:hover[active="1"] {
+                color: var(--curModeTextHover);
             }
-
-            nav ul li label:hover {
-                color: var(--curModeTextHover)
-            }
-
-            .glow {
-                filter: drop-shadow(0 0 5px var(--curModeBG))
-                        drop-shadow(0 0 5px var(--curModeBG))
-                        drop-shadow(0 0 10px var(--curModeBG))
-                        drop-shadow(0 0 15px var(--curModeBG));
-            }
-            .defaultScroll {
+            
+            .scrollGreen {
                 background:
                     /* top layer */
                     var(--curModeForeground),
                     
                     radial-gradient(
                         circle 500px at var(--mouseX) var(--mouseY),
-                        var(--curModeMouse),
+                        var(--curModeMouseGreen),
                         rgba(0,255,0,0)
                     ),
                     
@@ -124,17 +146,17 @@
                 background-repeat: repeat, no-repeat;
                 min-height: 100vh;
 
-                animation: scrollBackground 50s linear infinite;
+                animation: scrollBGGreen 50s linear infinite;
             }
 
-            .altScroll {
+            .scrollRed {
                 background:
                     /* top layer */
                     var(--curModeForeground),
                     
                     radial-gradient(
                         circle 500px at var(--mouseX) var(--mouseY),
-                        var(--curModeMouseAlt),
+                        var(--curModeMouseRed),
                         rgba(255,0,0,0)
                     ),
                     
@@ -144,10 +166,50 @@
                 background-repeat: repeat, no-repeat;
                 border-bottom: 2px solid var(--curModeAccent);
                 
-                animation: scrollBackgroundAlt 50s linear infinite;
+                animation: scrollBGRed 50s linear infinite;
             }
 
-            @keyframes scrollBackground {
+            .scrollBlue {
+                background:
+                    /* top layer */
+                    var(--curModeForeground),
+                    
+                    radial-gradient(
+                        circle 500px at var(--mouseX) var(--mouseY),
+                        var(--curModeMouseBlue),
+                        rgba(255,0,0,0)
+                    ),
+                    
+                    var(--curModeBG);
+                    /* bottom layer */
+                
+                background-repeat: repeat, no-repeat;
+                border: 2px solid var(--curModeAccent);
+                
+                animation: scrollBGBlue 50s linear infinite;
+            }
+
+            .scrollGray {
+                background:
+                    /* top layer */
+                    var(--curModeForeground),
+                    
+                    radial-gradient(
+                        circle 500px at var(--mouseX) var(--mouseY),
+                        var(--curModeMouseYellow),
+                        rgba(255,0,0,0)
+                    ),
+                    
+                    var(--curModeBG);
+                    /* bottom layer */
+                
+                background-repeat: repeat, no-repeat;
+                border: 2px solid var(--curModeAccent);
+                
+                animation: scrollBGYellow 50s linear infinite;
+            }
+
+            @keyframes scrollBGGreen {
                 0% {
                     background-position: 0px 0px, 0 0, 0 0;
                 }
@@ -157,7 +219,7 @@
                 }
             }
 
-            @keyframes scrollBackgroundAlt {
+            @keyframes scrollBGRed {
                 0% {
                     background-position: 0px 0px, 0 0, 0 0;
                 }
@@ -166,28 +228,62 @@
                     background-position: 1000px 1000px, 0 0, 0 0;
                 }
             }
+
+            @keyframes scrollBGBlue {
+                0% {
+                    background-position: 0px 0px, 0 0, 0 0;
+                }
+                100% {
+                    /* only move the mask (i.e. top layer) */
+                    background-position: 1000px -1000px, 0 0, 0 0;
+                }
+            }
+
+            @keyframes scrollBGYellow {
+                0% {
+                    background-position: 0px 0px, 0 0, 0 0;
+                }
+                100% {
+                    /* only move the mask (i.e. top layer) */
+                    background-position: -1000px 1000px, 0 0, 0 0;
+                }
+            }
         </style>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const cssGlobals = document.documentElement.style;
                 const darkModeLabel = document.querySelector('label[for="darkModeToggle"]');
+                const darkModeToggle = document.getElementById('darkModeToggle');
 
                 // get mouse position
                 document.addEventListener('mousemove', (e) => {
-                    document.body.style.setProperty('--mouseX', e.clientX + 'px');
-                    document.body.style.setProperty('--mouseY', e.clientY + 'px');
+                    const scrollElements = document.querySelectorAll('[class*="scroll"]');
+
+                    scrollElements.forEach((element) => {
+                        const rect = element.getBoundingClientRect();
+
+                        // Calculate relative mouse position for each element
+                        const relativeX = e.clientX - rect.left;
+                        const relativeY = e.clientY - rect.top;
+
+                        // Update CSS variables for each element
+                        element.style.setProperty('--mouseX', `${relativeX}px`);
+                        element.style.setProperty('--mouseY', `${relativeY}px`);
+                    });
                 });
 
-                // dark mode toggle
-                const darkModeToggle = document.getElementById('darkModeToggle');
+                // dark mode toggle button (hidden checkbox)
                 darkModeToggle.addEventListener('change', () => {
                     if (darkModeToggle.checked) {
                         darkModeLabel.innerHTML = 'Light Mode';
                         cssGlobals.setProperty('--curModeForeground', 'var(--darkModeForeground)');
                         cssGlobals.setProperty('--curModeBG', 'var(--darkModeBG)');
-                        cssGlobals.setProperty('--curModeMouse', 'var(--darkModeMouse)');
-                        cssGlobals.setProperty('--curModeMouseAlt', 'var(--darkModeMouseAlt)');
+                        cssGlobals.setProperty('--curModeMouseGreen', 'var(--darkModeMouseGreen)');
+                        cssGlobals.setProperty('--curModeMouseRed', 'var(--darkModeMouseRed)');
+                        cssGlobals.setProperty('--curModeMouseBlue', 'var(--darkModeMouseBlue)');
+                        cssGlobals.setProperty('--curModeMouseYellow', 'var(--darkModeMouseGray)');
                         cssGlobals.setProperty('--curModeAccent', 'var(--darkModeAccent)');
+                        cssGlobals.setProperty('--curModeGlow', 'var(--darkModeGlow)');
                         cssGlobals.setProperty('--curModeText', 'var(--darkModeText)');
                         cssGlobals.setProperty('--curModeTextHover', 'var(--darkModeTextHover)');
                         cssGlobals.setProperty('--curModeTextSelected', 'var(--darkModeTextSelected)');
@@ -195,9 +291,12 @@
                         darkModeLabel.innerHTML = 'Dark Mode';
                         cssGlobals.setProperty('--curModeForeground', 'var(--lightModeForeground)');
                         cssGlobals.setProperty('--curModeBG', 'var(--lightModeBG)');
-                        cssGlobals.setProperty('--curModeMouse', 'var(--lightModeMouse)');
-                        cssGlobals.setProperty('--curModeMouseAlt', 'var(--lightModeMouseAlt)');
+                        cssGlobals.setProperty('--curModeMouseGreen', 'var(--lightModeMouseGreen)');
+                        cssGlobals.setProperty('--curModeMouseRed', 'var(--lightModeMouseRed)');
+                        cssGlobals.setProperty('--curModeMouseBlue', 'var(--lightModeMouseBlue)');
+                        cssGlobals.setProperty('--curModeMouseYellow', 'var(--lightModeMouseGray)');
                         cssGlobals.setProperty('--curModeAccent', 'var(--lightModeAccent)');
+                        cssGlobals.setProperty('--curModeGlow', 'var(--lightModeGlow)');
                         cssGlobals.setProperty('--curModeText', 'var(--lightModeText)');
                         cssGlobals.setProperty('--curModeTextHover', 'var(--lightModeTextHover)');
                         cssGlobals.setProperty('--curModeTextSelected', 'var(--lightModeTextSelected)');
@@ -207,22 +306,28 @@
         </script>
         <title>Ethan Battaglia</title>
     </head>
-    <body class="defaultScroll">
-        <nav class="altScroll">
+    <body class="scrollGreen">
+        <nav class="scrollRed glow">
             <ul>
-                <li><a href="https://ethanbattaglia.com" class="glow">Home</a></li> <!-- put all links & resume here (basically an about me page) -->
-                <li><a href="https://ethanbattaglia.com/experience" class="glow">Experience</a></li> <!-- put timeline of experience here -->
-                <li><a href="https://ethanbattaglia.com/contact" class="glow">Contact</a></li> <!-- form to send an email here -->
+                <li><a href="https://ethanbattaglia.com" class="clickable" active="1">Home</a></li> <!-- put all links & resume here (basically an about me page) -->
+                <li><a href="https://ethanbattaglia.com/experience" class="clickable">Experience</a></li> <!-- put timeline of experience here -->
+                <li><a href="https://ethanbattaglia.com/contact" class="clickable">Contact</a></li> <!-- form to send an email here -->
                 <li>
                     <input type="checkbox" id="darkModeToggle" />
-                    <label for="darkModeToggle" class="glow">Dark Mode</label>
+                    <label for="darkModeToggle" class="clickable">Dark Mode</label>
                 </li>
             </ul>
         </nav>
-        <div>
+        <div class="scrollGray glow">
+            <h1>Hi! I'm Ethan.</h1>
+            <p>This is my website.</p>
+            <p>I love my website.</p>
+            <p>This is my website.</p>
+            <!--
             <h1>There's nothing here yet... EXCEPT HYPERLINKS!!?!!?!</h1>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/ethan-battaglia" style="color:rgb(1, 153, 241)";>https://www.linkedin.com/in/ethan-battaglia</a></p>
             <p>Github: <a href="https://github.com/greagob" style="color:rgb(255, 255, 255)">https://github.com/greagob</a> </p>
+            -->
         </div>
     </body>
 </html>
