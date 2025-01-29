@@ -10,17 +10,19 @@
             :root {
                 --navFont: "Montserrat", serif;
                 --navFontSize: 17px;
-                --headerFont: ;
-                --headerFontSize: ;
-                --pFont: ;
-                --pFontSize: ;
+                --headerFont: "Montserrat", serif;
+                --headerFontSize: 30px;
+                --headerFontWeight: 600;
+                --pFont: "Montserrat", serif;
+                --pFontSize: 15px;
+                --pFontWeight: 450;
 
 
                 --lightModeForeground: url("circuitboard.png");
                 --lightModeBG: rgb(245, 245, 245);
                 --lightModeMouseGreen: rgb(200, 245, 200);
                 --lightModeMouseRed: rgb(245,200,200);
-                --lightModeMouseBlue: rgb(200,200,255);
+                --lightModeMouseBlue: rgb(215,215,245);
                 --lightModeMouseGray: rgb(229, 229, 229);
                 --lightModeAccent: #ccc;
                 --lightModeGlow: rgba(0,0,0,.1);
@@ -32,7 +34,7 @@
                 --darkModeBG: rgb(12,12,12);
                 --darkModeMouseGreen: rgb(12,30,12);
                 --darkModeMouseRed: rgb(50,12,12);
-                --darkModeMouseBlue: rgb(12,12,50);
+                --darkModeMouseBlue: rgb(20,20,50);
                 --darkModeMouseGray: rgba(30,30,30,1);
                 --darkModeAccent: #333;
                 --darkModeGlow: rgba(255,255,255,.1);
@@ -70,10 +72,22 @@
 
             h1 {
                 color: var(--curModeText);
+                font-family: var(--headerFont);
+                font-weight: var(--headerFontWeight);
+                font-size: var(--headerFontSize);
             }
 
             p {
                 color: var(--curModeText);
+                font-family: var(--pFont);
+                font-weight: var(--pFontWeight);
+                font-size: var(--pFontSize);
+                line-height: 1.5;
+            }
+
+            .scrollMedia img {
+                display: block;
+                height: auto;
             }
 
             nav ul {
@@ -88,14 +102,6 @@
             body {
                 height: 100%;
                 width: 100%;
-            }
-
-            body div {
-                width: clamp(250px, 80%, 800px);
-                margin: 50px auto 0 auto;
-                padding: 20px;
-
-                border-radius: 10px;
             }
 
             .glow {
@@ -129,7 +135,9 @@
                 color: var(--curModeTextHover);
             }
             
-            .scrollGreen {
+            .scrollBody {
+                text-align: center;
+                
                 background:
                     /* top layer */
                     var(--curModeForeground),
@@ -149,7 +157,9 @@
                 animation: scrollBGGreen 50s linear infinite;
             }
 
-            .scrollRed {
+            .scrollNav {
+                margin-bottom: 50px;
+                
                 background:
                     /* top layer */
                     var(--curModeForeground),
@@ -169,7 +179,14 @@
                 animation: scrollBGRed 50s linear infinite;
             }
 
-            .scrollBlue {
+            .scrollMedia {
+                display: inline-block;
+                margin: 20px auto;
+                padding: 50px;
+
+                border-radius: 10px;
+                border: 2px solid var(--curModeAccent);
+
                 background:
                     /* top layer */
                     var(--curModeForeground),
@@ -184,12 +201,19 @@
                     /* bottom layer */
                 
                 background-repeat: repeat, no-repeat;
-                border: 2px solid var(--curModeAccent);
                 
-                animation: scrollBGBlue 50s linear infinite;
+                
+                animation: scrollBGBlue 80s linear infinite;
             }
 
-            .scrollGray {
+            .scrollText {
+                width: clamp(250px, 80%, 800px);
+                margin: 0 auto 0 auto;
+                padding: 20px;
+
+                border: 2px solid var(--curModeAccent);
+                border-radius: 10px;
+
                 background:
                     /* top layer */
                     var(--curModeForeground),
@@ -204,9 +228,8 @@
                     /* bottom layer */
                 
                 background-repeat: repeat, no-repeat;
-                border: 2px solid var(--curModeAccent);
                 
-                animation: scrollBGYellow 50s linear infinite;
+                animation: scrollBGGray 80s linear infinite;
             }
 
             @keyframes scrollBGGreen {
@@ -239,7 +262,7 @@
                 }
             }
 
-            @keyframes scrollBGYellow {
+            @keyframes scrollBGGray {
                 0% {
                     background-position: 0px 0px, 0 0, 0 0;
                 }
@@ -306,8 +329,8 @@
         </script>
         <title>Ethan Battaglia</title>
     </head>
-    <body class="scrollGreen">
-        <nav class="scrollRed glow">
+    <body class="scrollBody">
+        <nav class="scrollNav glow">
             <ul>
                 <li><a href="https://ethanbattaglia.com" class="clickable" active="1">Home</a></li> <!-- put all links & resume here (basically an about me page) -->
                 <li><a href="https://ethanbattaglia.com/experience" class="clickable">Experience</a></li> <!-- put timeline of experience here -->
@@ -318,16 +341,28 @@
                 </li>
             </ul>
         </nav>
-        <div class="scrollGray glow">
-            <h1>Hi! I'm Ethan.</h1>
-            <p>This is my website.</p>
-            <p>I love my website.</p>
-            <p>This is my website.</p>
-            <!--
-            <h1>There's nothing here yet... EXCEPT HYPERLINKS!!?!!?!</h1>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/ethan-battaglia" style="color:rgb(1, 153, 241)";>https://www.linkedin.com/in/ethan-battaglia</a></p>
-            <p>Github: <a href="https://github.com/greagob" style="color:rgb(255, 255, 255)">https://github.com/greagob</a> </p>
-            -->
+        <div class="scrollText glow">
+            <h1 style="text-align: center;">Hi! I'm Ethan.</h1>
+            <p><br>As a soon-to-be-graduate Computer Science student, I've worked on a bunch of different software and interactive media.</p>
+            <p><br>If you were wondering, here's what I look like:</p>
+        </div>
+
+        <div class="scrollMedia glow">
+            <img src="me.jpg" alt="me">
+            <p style="text-align: center;">this is me at code ninjas</p>
+        </div>
+
+        <div class="scrollText glow">
+            <p>Whoops, that was my dog. Here's the <i>actual</i> me:</p>
+        </div>
+
+        <div class="scrollMedia glow">
+
         </div>
     </body>
+    <!--
+    <h1>There's nothing here yet... EXCEPT HYPERLINKS!!?!!?!</h1>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ethan-battaglia" style="color:rgb(1, 153, 241)";>https://www.linkedin.com/in/ethan-battaglia</a></p>
+    <p>Github: <a href="https://github.com/greagob" style="color:rgb(255, 255, 255)">https://github.com/greagob</a> </p>
+    -->
 </html>
