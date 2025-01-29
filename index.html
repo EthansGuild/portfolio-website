@@ -26,8 +26,8 @@
                 --lightModeMouseGray: rgb(229, 229, 229);
                 --lightModeAccent: #ccc;
                 --lightModeGlow: rgba(0,0,0,.1);
-                --lightModeText: #555;
-                --lightModeTextHover: #999;
+                --lightModeText: #666;
+                --lightModeTextHover: #aaa;
                 --lightModeTextSelected: black;
 
                 --darkModeForeground: url("circuitboardDARK.png");
@@ -39,7 +39,7 @@
                 --darkModeAccent: #333;
                 --darkModeGlow: rgba(255,255,255,.1);
                 --darkModeText: #999;
-                --darkModeTextHover: #555;
+                --darkModeTextHover: #444;
                 --darkModeTextSelected: white;
 
                 /* use light mode by default */
@@ -85,14 +85,6 @@
                 line-height: 1.5;
             }
 
-            .scrollMedia img {
-                display: block;
-                height: auto;
-                border-radius: 30px;
-                border: 1px solid var(--curModeAccent);
-                filter: drop-shadow(0 0 5px var(--curModeGlow));
-            }
-
             nav ul {
                 list-style-type: none;
                 min-height: 60px;
@@ -105,10 +97,6 @@
             body {
                 height: 100%;
                 width: 100%;
-            }
-
-            .glow {
-                filter: drop-shadow(0 0 5px var(--curModeGlow));
             }
 
             .clickable {
@@ -162,7 +150,10 @@
 
             .scrollNav {
                 margin-bottom: 50px;
-                
+
+                border-bottom: 2px solid var(--curModeAccent);
+                filter: drop-shadow(0 0 5px var(--curModeGlow));
+
                 background:
                     /* top layer */
                     var(--curModeForeground),
@@ -177,7 +168,6 @@
                     /* bottom layer */
                 
                 background-repeat: repeat, no-repeat;
-                border-bottom: 2px solid var(--curModeAccent);
                 
                 animation: scrollBGRed 50s linear infinite;
             }
@@ -185,10 +175,11 @@
             .scrollMedia {
                 display: inline-block;
                 margin: 20px auto;
-                padding: 50px;
+                padding: 20px;
 
-                border-radius: 10px;
                 border: 2px solid var(--curModeAccent);
+                border-radius: 10px;
+                filter: drop-shadow(0 0 5px var(--curModeGlow));
 
                 background:
                     /* top layer */
@@ -209,13 +200,25 @@
                 animation: scrollBGBlue 80s linear infinite;
             }
 
+            .scrollMedia img {
+                display: block;
+                height: auto;
+                border-radius: 30px;
+                filter: drop-shadow(0 0 5px var(--curModeGlow));
+            }
+
+            .scrollMedia p {
+                font-weight: var(--headerFontWeight);
+            }
+
             .scrollText {
-                width: clamp(250px, 80%, 800px);
+                /* width: clamp(250px, 80%, 800px); */
                 margin: 0 auto 0 auto;
                 padding: 20px;
 
-                border: 2px solid var(--curModeAccent);
-                border-radius: 10px;
+                filter: drop-shadow(0 0 5px var(--curModeGlow));
+
+                /* border-radius: 10px; */
 
                 background:
                     /* top layer */
@@ -333,7 +336,7 @@
         <title>Ethan Battaglia</title>
     </head>
     <body class="scrollBody">
-        <nav class="scrollNav glow">
+        <nav class="scrollNav">
             <ul>
                 <li><a href="https://ethanbattaglia.com" class="clickable" active="1">Home</a></li> <!-- put all links & resume here (basically an about me page) -->
                 <li><a href="https://ethanbattaglia.com/works" class="clickable">Works</a></li> <!-- put timeline of works here -->
@@ -344,26 +347,29 @@
                 </li>
             </ul>
         </nav>
-        <div class="scrollText glow">
+
+        <div class="scrollText">
             <h1 style="text-align: center;">Hi! I'm Ethan.</h1>
             <p><br>As a soon-to-be-graduate Computer Science student, I've worked on a bunch of different software and interactive media.</p>
             <p><br>If you were wondering, here's what I look like:</p>
         </div>
 
-        <div class="scrollMedia glow">
+        <div class="scrollMedia">
             <img src="dawg.jpg" width="200" height="200" alt="me">
-            <p style="text-align: center;">this is me</p>
+            <p>this is me</p>
         </div>
 
-        <div class="scrollText glow">
+        <div class="scrollText">
             <p>Whoops, that was my dog. Here's the <i>actual</i> me:</p>
         </div>
 
-        
-
-        <div class="scrollMedia glow">
+        <div class="scrollMedia">
             <img src="me.jpg" width="200" height="200" alt="me">
-            <p style="text-align: center;">this is me</p>
+            <p>this is me</p>
+        </div>
+
+        <div class="scrollText">
+            <p>Here are some of the notable projects I've worked on:</p>
         </div>
     </body>
     <!--
