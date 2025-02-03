@@ -10,26 +10,26 @@
     --pFontWeight: 450;
 
 
-    --lightModeForeground: url("circuitboard.png");
+    --lightModeForeground: url("assets/circuitboard.png");
     --lightModeBG: rgb(245, 245, 245);
     --lightModeMouseGreen: rgb(200, 245, 200);
     --lightModeMouseRed: rgb(245,200,200);
     --lightModeMouseBlue: rgb(215,215,245);
     --lightModeMouseGray: rgb(229, 229, 229);
     --lightModeAccent: #ccc;
-    --lightModeGlow: rgba(0,0,0,.1);
+    --lightModeGlow: rgba(0,0,0,.2);
     --lightModeText: #666;
     --lightModeTextHover: #aaa;
     --lightModeTextSelected: black;
 
-    --darkModeForeground: url("circuitboardDARK.png");
+    --darkModeForeground: url("assets/circuitboardDARK.png");
     --darkModeBG: rgb(12,12,12);
     --darkModeMouseGreen: rgb(12,30,12);
     --darkModeMouseRed: rgb(50,12,12);
-    --darkModeMouseBlue: rgb(20,20,50);
-    --darkModeMouseGray: rgba(30,30,30,1);
+    --darkModeMouseBlue: rgb(30,30,60);
+    --darkModeMouseGray: rgb(30,30,30);
     --darkModeAccent: #333;
-    --darkModeGlow: rgba(255,255,255,.1);
+    --darkModeGlow: rgba(255,255,255,.2);
     --darkModeText: #999;
     --darkModeTextHover: #555;
     --darkModeTextSelected: white;
@@ -77,15 +77,6 @@ p {
     line-height: 1.5;
 }
 
-nav ul {
-    list-style-type: none;
-    min-height: 60px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 body {
     height: 100%;
     width: 100%;
@@ -115,8 +106,6 @@ body {
 }
 
 .scrollBody {
-    text-align: center;
-    
     background:
         /* top layer */
         var(--curModeForeground),
@@ -137,10 +126,15 @@ body {
 }
 
 .scrollNav {
+    z-index: 100;
+    position: -webkit-sticky; /* for safari */
+    position: sticky;
+    top: 0;
     margin-bottom: 50px;
 
+    border-top: 2px solid var(--curModeAccent);
     border-bottom: 2px solid var(--curModeAccent);
-    filter: drop-shadow(0 0 5px var(--curModeGlow));
+    box-shadow: 0 0 10px var(--curModeGlow);
 
     background:
         /* top layer */
@@ -160,14 +154,24 @@ body {
     animation: scrollBGRed 50s linear infinite;
 }
 
+.scrollNav ul {
+    list-style-type: none;
+    min-height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .scrollMedia {
     display: inline-block;
     margin: 20px auto;
-    padding: 20px;
 
     border: 2px solid var(--curModeAccent);
-    border-radius: 10px;
-    filter: drop-shadow(0 0 5px var(--curModeGlow));
+    border-radius: 30px;
+    box-shadow: 0 0 10px var(--curModeGlow);
+
+    overflow: hidden;
 
     background:
         /* top layer */
@@ -191,23 +195,26 @@ body {
 .scrollMedia img {
     display: block;
     height: auto;
-    border-radius: 30px;
-    filter: drop-shadow(0 0 5px var(--curModeGlow));
+    border-radius: 0px 0px 20px 20px;
 }
 
 .scrollMedia p {
     font-weight: var(--headerFontWeight);
 }
 
-.scrollText {
-    width: clamp(250px, 80%, 800px);
+.scrollHero {
+    /* alignment */
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+
+    max-width: clamp(250px, 90%, 1000px);
+    height: 180px;
     margin: 0 auto 0 auto;
-    padding: 20px;
 
-    filter: drop-shadow(0 0 5px var(--curModeGlow));
-
-    /* border-radius: 10px; */
-
+    /* styling */
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--curModeGlow);
     background:
         /* top layer */
         var(--curModeForeground),
@@ -220,10 +227,43 @@ body {
         
         var(--curModeBG);
         /* bottom layer */
-    
     background-repeat: repeat, no-repeat;
-    
     animation: scrollBGGray 80s linear infinite;
+}
+
+.scrollHero div {
+    flex: 1 1 50%;
+    min-width: 0;
+    padding: 20px;
+}
+
+.scrollHero img {
+    aspect-ratio: 16/9;
+    height: 100%;
+    object-fit: cover;
+    width: auto;
+
+    mask-image: linear-gradient(to left,
+        rgba(0,0,0,1) 50%,
+        rgba(0,0,0,0) 100%);
+}
+
+@media (max-width: 670px) {
+    .scrollHero {
+        text-align: center;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .scrollHero div {
+        padding: 20px;
+    }
+
+    .scrollHero img {
+        mask-image: linear-gradient(to top,
+            rgba(0,0,0,1) 30%,
+            rgba(0,0,0,0) 100%);
+    }
 }
 
 @keyframes scrollBGGreen {
