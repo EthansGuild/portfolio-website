@@ -1,0 +1,106 @@
+/* global variables */
+:root {
+    --navFont: "Montserrat", serif;
+    --navFontSize: 17px;
+    --headerFont: "Montserrat", serif;
+    --headerFontSize: 30px;
+    --headerFontWeight: 600;
+    --pFont: "Montserrat", serif;
+    --pFontSize: 15px;
+    --pFontWeight: 450;
+    --yearFont: "Montserrat", serif;
+    --yearFontSize: 20px;
+    --yearFontWeight: 700;
+
+
+    --lightModeForeground: url("../assets/circuitboard.png");
+    --lightModeBG: rgb(245, 245, 245);
+    --lightModeMouseGreen: rgb(200, 245, 200);
+    --lightModeMouseRed: rgb(245,200,200);
+    --lightModeMouseBlue: rgb(215,215,245);
+    --lightModeMouseGray: rgb(229, 229, 229);
+    --lightModeAccent: #ccc;
+    --lightModeGlow: rgba(0,0,0,.2);
+    --lightModeText: #666;
+    --lightModeTextHover: #aaa;
+    --lightModeTextSelected: black;
+
+    --darkModeForeground: url("../assets/circuitboardDARK.png");
+    --darkModeBG: rgb(12,12,12);
+    --darkModeMouseGreen: rgb(12,30,12);
+    --darkModeMouseRed: rgb(50,12,12);
+    --darkModeMouseBlue: rgb(30,30,60);
+    --darkModeMouseGray: rgb(30,30,30);
+    --darkModeAccent: #333;
+    --darkModeGlow: rgba(255,255,255,.2);
+    --darkModeText: #999;
+    --darkModeTextHover: #555;
+    --darkModeTextSelected: white;
+
+    /* use light mode by default */
+    --curModeForeground: var(--lightModeForeground);
+    --curModeBG: var(--lightModeBG);
+    --curModeMouseGreen: var(--lightModeMouseGreen);
+    --curModeMouseRed: var(--lightModeMouseRed);
+    --curModeMouseBlue: var(--lightModeMouseBlue);
+    --curModeMouseYellow: var(--lightModeMouseGray);
+    --curModeAccent: var(--lightModeAccent);
+    --curModeGlow: var(--lightModeGlow);
+    --curModeText: var(--lightModeText);
+    --curModeTextHover: var(--lightModeTextHover);
+    --curModeTextSelected: var(--lightModeTextSelected);
+    
+    /* gradients are centered until JS updates it */
+    --mouseX: 50%;
+    --mouseY: 50%;
+}
+
+#darkModeToggle {
+    display: none;
+}
+
+/* remove margin (outside) and padding (inside) on everything */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: var(--curModeText);
+    font-family: var(--headerFont);
+    font-weight: var(--headerFontWeight);
+    font-size: var(--headerFontSize);
+}
+
+p {
+    color: var(--curModeText);
+    font-family: var(--pFont);
+    font-weight: var(--pFontWeight);
+    font-size: var(--pFontSize);
+    line-height: 1.5;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.scrollBody {
+    background:
+        /* top layer */
+        var(--curModeForeground),
+        
+        radial-gradient(
+            circle 500px at var(--mouseX) var(--mouseY),
+            var(--curModeMouseGreen),
+            rgba(0,255,0,0)
+        ),
+        
+        var(--curModeBG);
+        /* bottom layer */
+    
+    background-repeat: repeat, no-repeat;
+    min-height: 100vh;
+
+    animation: scrollBGGreen 50s linear infinite;
+}

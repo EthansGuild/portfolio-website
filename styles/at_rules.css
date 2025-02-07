@@ -1,0 +1,39 @@
+@keyframes scrollBGGreen {
+    0% {
+        background-position: 0px 0px, 0 0, 0 0;
+    }
+    100% {
+        /* only move the mask (i.e. top layer) */
+        background-position: -1000px -1000px, 0 0, 0 0;
+    }
+}
+
+@keyframes scrollBGRed {
+    0% {
+        background-position: 0px 0px, 0 0, 0 0;
+    }
+    100% {
+        /* only move the mask (i.e. top layer) */
+        background-position: 1000px 1000px, 0 0, 0 0;
+    }
+}
+
+@keyframes scrollBGBlue {
+    0% {
+        background-position: 0px 0px, 0 0, 0 0;
+    }
+    100% {
+        /* only move the mask (i.e. top layer) */
+        background-position: 1000px -1000px, 0 0, 0 0;
+    }
+}
+
+@keyframes scrollBGGray {
+    0% {
+        background-position: 0px 0px, 0 0, 0 0;
+    }
+    100% {
+        /* only move the mask (i.e. top layer) */
+        background-position: -1000px 1000px, 0 0, 0 0;
+    }
+}

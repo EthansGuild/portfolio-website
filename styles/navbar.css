@@ -1,0 +1,60 @@
+.clickable {
+    display: inline-block;
+    padding: 14px 20px;
+    text-align: center;
+    text-shadow : 0 0 5px var(--curModeBG), 0 0 5px var(--curModeBG),
+                  0 0 10px var(--curModeBG), 0 0 10px var(--curModeBG),
+                  0 0 20px var(--curModeBG), 0 0 20px var(--curModeBG);
+
+    font-family: var(--navFont);
+    font-weight: 800;
+    font-size: var(--navFontSize);
+    text-decoration: none;
+    color: var(--curModeText);
+}
+
+.clickable:hover {
+    color: var(--curModeTextHover);
+}
+
+.clickable[active="1"] {
+    color: var(--curModeTextSelected);
+}
+
+.scrollNav {
+    z-index: 100;
+    position: -webkit-sticky; /* for safari */
+    position: sticky;
+    top: 0;
+    margin-bottom: 50px;
+
+    border-top: 2px solid var(--curModeAccent);
+    border-bottom: 2px solid var(--curModeAccent);
+    box-shadow: 0 0 10px var(--curModeGlow);
+
+    background:
+        /* top layer */
+        var(--curModeForeground),
+        
+        radial-gradient(
+            circle 500px at var(--mouseX) var(--mouseY),
+            var(--curModeMouseRed),
+            rgba(255,0,0,0)
+        ),
+        
+        var(--curModeBG);
+        /* bottom layer */
+    
+    background-repeat: repeat, no-repeat;
+    
+    animation: scrollBGRed 50s linear infinite;
+}
+
+.scrollNav ul {
+    list-style-type: none;
+    min-height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

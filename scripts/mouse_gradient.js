@@ -1,6 +1,6 @@
 // get mouse position
 document.addEventListener('mousemove', (e) => {
-    const scrollElements = document.querySelectorAll('[class*="scroll"]');
+    const scrollElements = document.querySelectorAll('[class*="scroll"], [class*="works-right"]');
 
     scrollElements.forEach((element) => {
         const rect = element.getBoundingClientRect();

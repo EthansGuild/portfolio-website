@@ -17,9 +17,14 @@
         <meta property="og:image" content="">
 
         <!-- css, js, fonts, etc -->
-        <link rel="stylesheet" href="style.css">
-        <script src="mouse_gradient.js" defer></script>
-        <script src="dark_mode_toggle.js" defer></script>
+        <link rel="stylesheet" href="styles/at_rules.css">
+        <link rel="stylesheet" href="styles/general.css">
+        <link rel="stylesheet" href="styles/hero.css">
+        <link rel="stylesheet" href="styles/navbar.css">
+        <link rel="stylesheet" href="styles/works.css">
+        <script src="scripts/mouse_gradient.js" defer></script>
+        <script src="scripts/dark_mode_toggle.js" defer></script>
+        <script src="scripts/works_section.js" defer></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,15 +46,75 @@
         <div class="scrollHero">
             <div>
                 <h1>Hi! I'm Ethan.</h1>
-                <p><br>As a soon-to-be-graduate Computer Science student, I've worked on a bunch of different software and interactive media.</p>
+                <p><br>As a soon-to-be-graduate Computer Science student, I've worked on a variety of software & interactive media.</p>
             </div>
             <img src="assets/backflip.jpg" width="200" height="200" alt="me">
         </div>
 
+
+        <div class="scrollWorks">
+
+
+            <!-- LEFT (70%) [preview of selected project] -->
+            <div class="works-left">
+                <h1 id="projectTitle">Project Title Goes Here</h1>
+                <div id="projectEmbed" class="video-embed">
+                    <!-- <iframe src = "...."> goes here -->
+                </div>
+                <p id="projectDescription">This is description, video embed appears above.</p>
+            </div>
+
+
+            <!-- RIGHT (30%) [timeline of projects] -->
+            <div class="works-right">
+
+                <div class="timeline-year" expanded="0">
+                    <p class="year-label">2025</p>
+
+                    <ul class="project-list">
+                        <li data-id="2025.A">Some Cool Project</li>
+                        <li data-id="2025.B">Another Project</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-year" expanded="0">
+                    <p class="year-label">2024</p>
+
+                    <ul class="project-list">
+                        <li data-id="2024.A">Some Cool Project 📽️</li>
+                        <li data-id="2024.B">Another Project 🕹️</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-year" expanded="0">
+                    <p class="year-label">2023</p>
+                    
+                    <ul class="project-list">
+                        <li data-id="2023.A">Morse Code Translator 🎓</li>
+                        <li data-id="2023.B">Remote Controlled Car 🎓</li>
+                        <li data-id="2023.C">Bideos 📽️</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-year" expanded="0">
+                    <p class="year-label">2022</p>
+                    
+                    <ul class="project-list">
+                        <li data-id="2022.A">Some Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool Project</li>
+                        <li data-id="2022.B">Another Project</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-year" expanded="0">
+                    <p class="year-label">2021 & Beyond</p>
+                    
+                    <ul class="project-list">
+                        <li data-id="2021.A">Some Cool Project 🕹️</li>
+                        <li data-id="2021.B">Another Project</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </body>
-    <!--
-    <h1>There's nothing here yet... EXCEPT HYPERLINKS!!?!!?!</h1>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/ethan-battaglia" style="color:rgb(1, 153, 241)";>https://www.linkedin.com/in/ethan-battaglia</a></p>
-    <p>Github: <a href="https://github.com/greagob" style="color:rgb(255, 255, 255)">https://github.com/greagob</a> </p>
-    -->
 </html>

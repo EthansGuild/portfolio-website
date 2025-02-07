@@ -1,0 +1,130 @@
+.scrollWorks {
+    /* alignment */
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+
+    max-width: clamp(250px, 90%, 1000px);
+    height: 600px;
+    margin: 0 auto 0 auto;
+
+    /* styling */
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--curModeGlow);
+}
+
+/* Left side: 70% */
+.works-left {
+    flex: 0 0 70%;
+    padding: 20px;
+    /* Make it scrollable only if your content overflows */
+    overflow-y: auto;
+    box-sizing: border-box;
+    text-align: center;
+
+    background:
+        /* top layer */
+        var(--curModeForeground),
+        
+        radial-gradient(
+            circle 500px at var(--mouseX) var(--mouseY),
+            var(--curModeMouseBlue),
+            rgba(255,0,0,0)
+        ),
+        
+        var(--curModeBG);
+        /* bottom layer */
+    background-repeat: repeat, no-repeat;
+    animation: scrollBGBlue 80s linear infinite;
+}
+
+.video-embed {
+    width: 100%;
+}
+
+/* Right side: 30% */
+.works-right {
+    flex: 0 0 30%;
+    padding: 20px;
+    overflow-y: auto; /* timeline can scroll up/down if large */
+    box-sizing: border-box; 
+
+    border-left: 2px solid var(--curModeAccent);
+    background:
+        /* top layer */
+        var(--curModeForeground),
+        
+        radial-gradient(
+            circle 500px at var(--mouseX) var(--mouseY),
+            var(--curModeMouseYellow),
+            rgba(255,0,0,0)
+        ),
+        
+        var(--curModeBG);
+        /* bottom layer */
+    background-repeat: repeat, no-repeat;
+    animation: scrollBGGray 80s linear infinite;
+}
+
+.timeline-year {
+    margin-bottom: 30px;
+    border-left: 2px solid var(--curModeAccent);
+    padding-left: 10px;
+}
+
+.year-label {
+    color: var(--curModeText);
+    font-family: var(--yearFont);
+    font-weight: var(--yearFontWeight);
+    font-size: var(--yearFontSize);
+
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.year-label:hover {
+    color: var(--curModeTextHover);
+}
+
+.year-label::after {
+    content: " ▼";
+    font-size: 0.8em;
+    color: var(--curModeTextHover);
+    margin-left: 5px;
+}
+
+.year-label:hover::after {
+    color: var(--curModeAccent);
+}
+
+/* When expanded="1", change the arrow to ▲ */
+.timeline-year[expanded="1"] .year-label::after {
+    content: " ▲";
+}
+
+/* The list of projects is hidden by default when expanded="0" */
+.project-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;  /* hide by default */
+}
+
+.project-list li  {
+    color: var(--curModeText);
+    font-family: var(--pFont);
+    font-weight: var(--pFontWeight);
+    font-size: var(--pFontSize);
+
+    cursor: pointer;
+}
+
+.project-list li:hover {
+    color: var(--curModeTextHover);
+}
+
+/* Show the list when expanded="1" */
+.timeline-year[expanded="1"] .project-list {
+    display: block;
+}
+  
