@@ -38,8 +38,10 @@
     animation: scrollBGBlue 80s linear infinite;
 }
 
-.video-embed {
+.video-embed iframe {
     width: 100%;
+    aspect-ratio: 16/9;
+    margin: 20px 0 10px 0;
 }
 
 /* Right side: 30% */
@@ -127,4 +129,26 @@
 .timeline-year[expanded="1"] .project-list {
     display: block;
 }
-  
+
+@media (max-width: 670px) {
+    .scrollWorks {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .works-right {
+        border-left: 0px;
+        border-top: 2px solid var(--curModeAccent);
+    }
+
+    .scrollHero div {
+        padding: 20px;
+    }
+
+    .scrollHero img {
+        height: auto;
+        mask-image: linear-gradient(to top,
+            rgba(0,0,0,1) 30%,
+            rgba(0,0,0,0) 100%);
+    }
+}
