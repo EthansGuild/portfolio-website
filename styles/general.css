@@ -15,9 +15,9 @@
 
     --lightModeForeground: url("../assets/circuitboard.png");
     --lightModeBG: rgb(245, 245, 245);
-    --lightModeMouseGreen: rgb(200, 245, 200);
+    --lightModeMouseGreen: rgb(200, 245, 215);
     --lightModeMouseRed: rgb(245,200,200);
-    --lightModeMouseBlue: rgb(215,215,245);
+    --lightModeMouseBlue: rgb(215,230,255);
     --lightModeMouseGray: rgb(229, 229, 229);
     --lightModeAccent: #ccc;
     --lightModeGlow: rgba(0,0,0,.2);
@@ -27,9 +27,9 @@
 
     --darkModeForeground: url("../assets/circuitboardDARK.png");
     --darkModeBG: rgb(12,12,12);
-    --darkModeMouseGreen: rgb(12,30,12);
-    --darkModeMouseRed: rgb(50,12,12);
-    --darkModeMouseBlue: rgb(30,30,60);
+    --darkModeMouseGreen: rgb(10,30,10);
+    --darkModeMouseRed: rgb(50,10,10);
+    --darkModeMouseBlue: rgb(15,25,40);
     --darkModeMouseGray: rgb(30,30,30);
     --darkModeAccent: #333;
     --darkModeGlow: rgba(255,255,255,.2);
@@ -65,11 +65,29 @@
     padding: 0;
 }
 
+h3 {
+    color: var(--curModeText);
+    font-family: var(--headerFont);
+    font-weight: var(--headerFontWeight);
+    font-size: calc(var(--headerFontSize)*1.5);
+    text-align: center;
+    text-shadow:
+    2px 2px 0 var(--curModeBG),
+    -2px 2px 0 var(--curModeBG),
+    -2px -2px 0 var(--curModeBG),
+    2px -2px 0 var(--curModeBG);
+}
+
 h1 {
     color: var(--curModeText);
     font-family: var(--headerFont);
     font-weight: var(--headerFontWeight);
     font-size: var(--headerFontSize);
+    text-shadow:
+    2px 2px 0 var(--curModeBG),
+    -2px 2px 0 var(--curModeBG),
+    -2px -2px 0 var(--curModeBG),
+    2px -2px 0 var(--curModeBG);
 }
 
 p {
@@ -78,6 +96,11 @@ p {
     font-weight: var(--pFontWeight);
     font-size: var(--pFontSize);
     line-height: 1.5;
+    text-shadow:
+    1px 1px 0 var(--curModeBG),
+    -1px 1px 0 var(--curModeBG),
+    -1px -1px 0 var(--curModeBG),
+    1px -1px 0 var(--curModeBG);
 }
 
 body {

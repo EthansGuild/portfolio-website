@@ -22,6 +22,8 @@
     box-sizing: border-box;
     text-align: center;
 
+    position: relative;
+    
     background:
         /* top layer */
         var(--curModeForeground),
@@ -36,6 +38,23 @@
         /* bottom layer */
     background-repeat: repeat, no-repeat;
     animation: scrollBGBlue 80s linear infinite;
+}
+
+.works-left h1 {
+    position: relative;
+    z-index: 1;
+}
+
+.works-left h2 {
+    position: relative;
+    z-index: 0;
+    top: -65px;
+    height: 0px;
+    opacity: 0.3;
+
+    font-size: calc(var(--headerFontSize)*2.5);
+    font-family: var(--headerFont);
+    color: var(--curModeText);
 }
 
 .video-embed iframe {
@@ -119,6 +138,12 @@
     font-size: var(--pFontSize);
 
     cursor: pointer;
+
+    text-shadow:
+    1px 1px 0 var(--curModeBG),
+    -1px 1px 0 var(--curModeBG),
+    -1px -1px 0 var(--curModeBG),
+    1px -1px 0 var(--curModeBG);
 }
 
 .project-list li:hover {

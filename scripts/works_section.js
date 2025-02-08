@@ -2,11 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Your master array of projects
   const projects = [
     {
+      id: "2025.B",
+      year: 2025,
+      title: "Personal Website",
+      embedURL: "https://www.youtube.com/embed/XXXXXX",
+      description: "It's what you see right now! It's a combination of a few weeks of brainstorming, raw HTML, CSS, and Javascript. I hope you like it!<br><br>Completed in February 2025."
+    },
+    {
       id: "2025.A",
       year: 2025,
-      title: "Project A",
-      embedURL: "https://www.youtube.com/embed/XXXXXX",
-      description: "Details about Project A..."
+      title: "Adrenadash Part",
+      embedURL: "https://www.youtube.com/embed/FsaEghQ2lzg?si=3tGeJb_gtgygrba0&amp;start=326",
+      description: "I helped build a part in a large Geometry Dash collaboration called \"Adrenadash\"! The decoration and gameplay is heavily inspired by the platformer game \"Celeste\". The part I made is timestamped in the video embed.<br><br>Released in February 2025."
     },
     {
       id: "2024.B",
@@ -17,12 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: "2024.A",
-      year: 2024,
+      year: "2024",
       title: "Project C",
       embedURL: "https://www.youtube.com/embed/ZZZZZZ",
       description: "Details about Project C..."
     }
-    // add more as needed...
   ];
 
   // Select all the "year" containers
@@ -64,16 +70,19 @@ document.addEventListener('DOMContentLoaded', () => {
 function populateProjectDetails(project) {
   // Get the left side elements
   const projectTitleElem = document.getElementById('projectTitle');
+  const projectYearElem = document.getElementById('projectYear');
   const projectEmbedElem = document.getElementById('projectEmbed');
   const projectDescElem  = document.getElementById('projectDescription');
 
   // Make sure they're visible
   projectTitleElem.style.display = 'block';
+  projectYearElem.style.display = 'block';
   projectEmbedElem.style.display = 'block';
   projectDescElem.style.display  = 'block';
 
   // Set text/HTML from the project object
   projectTitleElem.textContent = project.title;
-  projectDescElem.textContent  = project.description;
+  projectYearElem.textContent  = project.year;
   projectEmbedElem.innerHTML   = `<iframe src="${project.embedURL}" allowfullscreen></iframe>`;
+  projectDescElem.innerHTML  = project.description;
 }
