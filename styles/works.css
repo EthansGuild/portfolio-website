@@ -1,12 +1,12 @@
-.scrollWorks {
+.works {
     /* alignment */
     display: flex;
     align-items: stretch;
     overflow: hidden;
 
     max-width: clamp(250px, 90%, 1000px);
-    height: 600px;
-    margin: 0 auto 0 auto;
+    height: 700px;
+    margin: 0 auto 50px auto;
 
     /* styling */
     border-radius: 10px;
@@ -40,12 +40,13 @@
     animation: scrollBGBlue 80s linear infinite;
 }
 
-.works-left h1 {
+#projectTitle {
     position: relative;
     z-index: 1;
+    pointer-events: none;
 }
 
-.works-left h2 {
+#projectYear {
     position: relative;
     z-index: 0;
     top: -65px;
@@ -57,17 +58,34 @@
     color: var(--curModeText);
 }
 
-.video-embed iframe {
+#projectTags {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: calc(var(--pFontSize)*1.3);
+    text-align: right;
+}
+
+.embed iframe {
     width: 100%;
     aspect-ratio: 16/9;
     margin: 20px 0 10px 0;
+    border: none;
+}
+
+.embed img {
+    height: 100%;
+    margin: 20px 0 10px 0;
+    
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--curModeGlow);
 }
 
 /* Right side: 30% */
 .works-right {
     flex: 0 0 30%;
-    padding: 20px;
-    overflow-y: auto; /* timeline can scroll up/down if large */
+    padding: 20px 20px 0px 20px;
+    overflow-y: scroll; /* timeline can scroll up/down if large */
     box-sizing: border-box; 
 
     border-left: 2px solid var(--curModeAccent);
@@ -85,6 +103,16 @@
         /* bottom layer */
     background-repeat: repeat, no-repeat;
     animation: scrollBGGray 80s linear infinite;
+}
+
+.legend {
+    text-align: left;
+    margin: 0px auto 25px auto;
+    padding: 5px 10px 5px 10px;
+    
+    background-color: var(--curModeBG);
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--curModeGlow);
 }
 
 .timeline-year {
@@ -156,7 +184,7 @@
 }
 
 @media (max-width: 670px) {
-    .scrollWorks {
+    .works {
         flex-direction: column;
         height: auto;
     }
@@ -164,16 +192,6 @@
     .works-right {
         border-left: 0px;
         border-top: 2px solid var(--curModeAccent);
-    }
-
-    .scrollHero div {
-        padding: 20px;
-    }
-
-    .scrollHero img {
-        height: auto;
-        mask-image: linear-gradient(to top,
-            rgba(0,0,0,1) 30%,
-            rgba(0,0,0,0) 100%);
+        overflow-y: auto;
     }
 }

@@ -18,6 +18,7 @@
 
         <!-- css, js, fonts, etc -->
         <link rel="stylesheet" href="styles/at_rules.css">
+        <link rel="stylesheet" href="styles/contact.css">
         <link rel="stylesheet" href="styles/general.css">
         <link rel="stylesheet" href="styles/hero.css">
         <link rel="stylesheet" href="styles/navbar.css">
@@ -44,39 +45,48 @@
         </nav>
 
         <h3>Home</h3>
-
         <div class="scrollHero">
             <div>
                 <h1>Hi! I'm Ethan.</h1>
                 <p><br>As a soon-to-be-graduate Computer Science student, I've worked on a variety of software & interactive media.</p>
             </div>
-            <img src="assets/backflip.jpg" width="200" height="200" alt="me">
+            <img src="assets/me.jpg" width="200" height="200" alt="me">
         </div>
 
         <h3>Works</h3>
-        <div class="scrollWorks">
+        <div class="works">
 
 
             <!-- LEFT (70%) [preview of selected project] -->
             <div class="works-left">
-                <h1 id="projectTitle">Select a Project!</h1>
-                <h2 id="projectYear"></h2>
-                <div id="projectEmbed" class="video-embed">
-                    <!-- <iframe src = "...."> goes here -->
+                <div class="works-left-content">
+                    <h1 id="projectTitle">Select a Project!</h1>
+                    <h2 id="projectYear"></h2>
+                    <h2 id="projectTags"></h2>
+                    <div id="projectEmbed" class="embed">
+                        <!-- <iframe src = "...."> goes here -->
+                    </div>
+                    <p id="projectDescription">The video embed appears above this description.</p>
                 </div>
-                <p id="projectDescription">The video embed appears above this description.</p>
             </div>
 
 
             <!-- RIGHT (30%) [timeline of projects] -->
             <div class="works-right">
 
+                <div class="legend">
+                    <h1 style="text-align: center;">Legend</h1>
+                    <p>👥 Collaborative<br>
+                        🎓 Academic<br>
+                        🕹️ Interactive<br>
+                        📽️ Cinematic</p>
+                </div>
                 <div class="timeline-year" expanded="0">
                     <p class="year-label">2025</p>
 
                     <ul class="project-list">
-                        <li data-id="2025.B">Personal Website 🕹️📽️</li>
-                        <li data-id="2025.A">Adrenadash Part 🕹️</li>
+                        <li data-id="2025.B">Personal Website <span title="Interactive">🕹️</span></li>
+                        <li data-id="2025.A">Adrenadash Part <span title="Collaborative">👥</span><span title="Interactive">🕹️</span></li>
                     </ul>
                 </div>
 
@@ -84,8 +94,11 @@
                     <p class="year-label">2024</p>
 
                     <ul class="project-list">
-                        <li data-id="2024.A">Some Cool Project 📽️</li>
-                        <li data-id="2024.B">Another Project 🕹️</li>
+                        <li data-id="2024.E">Library Application <span title="Collaborative">👥</span><span title="Academic">🎓</span></li>
+                        <li data-id="2024.D">Product Web-App <span title="Collaborative">👥</span><span title="Academic">🎓</span><span title="Interactive">🕹️</span></li>
+                        <li data-id="2024.C">Steganography Study <span title="Academic">🎓</span><span title="Cinematic">📽️</span></li>
+                        <li data-id="2024.B">Manual Cipher <span title="Collaborative">👥</span><span title="Academic">🎓</span></li>
+                        <li data-id="2024.A">CV Pong <span title="Collaborative">👥</span><span title="Interactive">🕹️</span></li>
                     </ul>
                 </div>
 
@@ -93,8 +106,8 @@
                     <p class="year-label">2023</p>
                     
                     <ul class="project-list">
-                        <li data-id="2023.A">Morse Code Translator 🎓</li>
-                        <li data-id="2023.B">Remote Controlled Car 🎓</li>
+                        <li data-id="2023.A">Morse Code Translator <span title="Academic">🎓</span></li>
+                        <li data-id="2023.B">Remote Controlled Car <span title="Academic">🎓</span></li>
                         <li data-id="2023.C">Bideos 📽️</li>
                     </ul>
                 </div>
@@ -119,5 +132,20 @@
             </div>
 
         </div>
+
+        <h3>Contact</h3>
+
+        <footer style="text-align: center; align-items: center;">
+            <div class="footer-left">
+                <h1>Website</h1>
+                <p style="text-shadow: none";>© Ethan Battaglia 2025, All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <h1>Social</h1>
+                <p><a href="https://www.linkedin.com/in/ethan-battaglia/" style="color: #0a66c2;">LinkedIn</a> |
+                    <a href="https://github.com/greagob" style="color: gray;">Github</a> |
+                    <a href="https://www.youtube.com/channel/UCMEfN14_As1xczuR6DSrlKA" style="color: red;">Youtube</a></p>
+            </div>
+        </footer>
     </body>
 </html>

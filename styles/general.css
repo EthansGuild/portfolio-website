@@ -18,7 +18,7 @@
     --lightModeMouseGreen: rgb(200, 245, 215);
     --lightModeMouseRed: rgb(245,200,200);
     --lightModeMouseBlue: rgb(215,230,255);
-    --lightModeMouseGray: rgb(229, 229, 229);
+    --lightModeMouseGray: rgb(235, 235, 235);
     --lightModeAccent: #ccc;
     --lightModeGlow: rgba(0,0,0,.2);
     --lightModeText: #666;
@@ -105,7 +105,6 @@ p {
 
 body {
     height: 100%;
-    width: 100%;
 }
 
 .scrollBody {
@@ -126,4 +125,21 @@ body {
     min-height: 100vh;
 
     animation: scrollBGGreen 50s linear infinite;
+}
+
+footer {
+    height: 200px;
+    padding: 0 15% 0 15%;
+    display: flex;
+    
+    background: var(--curModeBG);
+    box-shadow: 0 0 10px var(--curModeGlow);
+}
+
+.footer-left {
+    flex: 0 0 50%;
+}
+
+.footer-right {
+    flex: 0 0 50%;
 }
