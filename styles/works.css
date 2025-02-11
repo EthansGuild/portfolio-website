@@ -17,8 +17,8 @@
 .works-left {
     flex: 0 0 70%;
     padding: 20px;
-    /* Make it scrollable only if your content overflows */
-    overflow-y: auto;
+    /* Do not scroll if too long, just cut off. */
+    overflow-y: hidden;
     box-sizing: border-box;
     text-align: center;
 
