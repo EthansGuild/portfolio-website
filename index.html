@@ -23,13 +23,14 @@
         <link rel="stylesheet" href="styles/hero.css">
         <link rel="stylesheet" href="styles/navbar.css">
         <link rel="stylesheet" href="styles/works.css">
-        <script src="scripts/mouse_gradient.js" defer></script>
         <script src="scripts/dark_mode_toggle.js" defer></script>
+        <script src="scripts/mouse_gradient.js" defer></script>
+        <script src="scripts/submit_button.js" defer></script>
         <script src="scripts/works_section.js" defer></script>
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     </head>
     <body class="scrollBody">
         <nav class="scrollNav">
@@ -76,10 +77,8 @@
 
                 <div class="legend">
                     <h1 style="text-align: center;">Legend</h1>
-                    <p>👥 Collaborative<br>
-                        🎓 Academic<br>
-                        🕹️ Interactive<br>
-                        📽️ Cinematic</p>
+                    <p>👥 Collaborative<br>🎓 Academic</p>
+                    <p>🕹️ Interactive<br>📽️ Cinematic</p>
                 </div>
                 <div class="timeline-year" expanded="0">
                     <p class="year-label">2025</p>
@@ -139,7 +138,36 @@
         </div>
 
         <h3>Contact</h3>
-        
+        <div class="scrollContact">
+            <form action="https://formspree.io/f/manqdorp" method="POST">
+                <table>
+                    <colgroup>
+                        <col style="width: 30%;">
+                        <col style="width: 70%;">
+                    </colgroup>
+                    <tr>
+                        <td><label for="name">Name</label></td>
+                        <td><input type="text" id="name" name="name" placeholder="Name goes here..." required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email</label></td>
+                        <td><input type="email" id="email" name="email" placeholder="Email goes here..." required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="title">Title</label></td>
+                        <td><input type="text" id="title" name="title" placeholder="Title goes here..." required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="message">Message</label></td>
+                        <td>
+                            <textarea id="message" name="message" placeholder="Message goes here..." required></textarea>
+                            <button type="submit" disabled>Submit</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
         <footer style="text-align: center; align-items: center;">
             <div class="footer-left">
                 <h1>Website</h1>

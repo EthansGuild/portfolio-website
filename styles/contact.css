@@ -1,0 +1,114 @@
+.scrollContact {
+    box-sizing: border-box;
+
+    /* alignment */
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    
+    max-width: clamp(250px, 90%, 1000px);
+    margin: 0 auto 50px auto;
+    padding: 20px;
+
+    /* styling */
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--curModeGlow);
+    background:
+        /* top layer */
+        var(--curModeForeground),
+        
+        radial-gradient(
+            circle 500px at var(--mouseX) var(--mouseY),
+            var(--curModeMouseYellow),
+            rgba(255,0,0,0)
+        ),
+        
+        var(--curModeBG);
+        /* bottom layer */
+    background-repeat: repeat, no-repeat;
+    animation: scrollBGGray 80s linear infinite;
+}
+
+table {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+td {
+    width: 100%;
+    vertical-align: top;
+    padding: 8px;
+}
+
+label {
+    color: var(--curModeText);
+    font-family: var(--headerFont);
+    font-weight: var(--headerFontWeight);
+    font-size: calc(var(--headerFontSize)*0.8);
+    text-shadow:
+    2px 2px 0 var(--curModeBG),
+    -2px 2px 0 var(--curModeBG),
+    -2px -2px 0 var(--curModeBG),
+    2px -2px 0 var(--curModeBG);
+}
+
+input {
+    width: 70%;
+    padding: 5px 10px;
+    
+    border: none;
+    border-radius: 5px;
+    background-color: var(--curModeBG);
+    box-shadow: 0 0 10px var(--curModeGlow);
+
+    color: var(--curModeText);
+    font-family: var(--pFont);
+    font-weight: var(--pFontWeight);
+    font-size: var(--pFontSize);
+    line-height: 1.5;
+}
+
+textarea {
+    width: 95%;
+    height: 120px;
+    resize: none;
+
+    padding: 5px 10px;
+    
+    border: none;
+    border-radius: 5px;
+    background-color: var(--curModeBG);
+    box-shadow: 0 0 10px var(--curModeGlow);
+
+    color: var(--curModeText);
+    font-family: var(--pFont);
+    font-weight: var(--pFontWeight);
+    font-size: var(--pFontSize);
+    line-height: 1.5;
+}
+
+button[type="submit"] {
+    display: block;
+    margin-top: 10px;
+    padding: 5px 10px;
+
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0,200,0,0.5);
+    
+    color: var(--curModeBG);
+    font-family: var(--headerFont);
+    font-weight: var(--headerFontWeight);
+    font-size: calc(var(--headerFontSize)*0.8);
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(0,200,0,0.8);
+}
+
+button[type="submit"][disabled] {
+    background-color: rgba(200,0,0,0.5);
+}

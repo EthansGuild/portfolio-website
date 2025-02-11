@@ -1,14 +1,14 @@
 /* global variables */
 :root {
-    --navFont: "Montserrat", serif;
+    --navFont: "Montserrat";
     --navFontSize: 17px;
-    --headerFont: "Montserrat", serif;
+    --headerFont: "Montserrat";
     --headerFontSize: 30px;
     --headerFontWeight: 600;
-    --pFont: "Montserrat", serif;
+    --pFont: "Barlow";
     --pFontSize: 15px;
     --pFontWeight: 450;
-    --yearFont: "Montserrat", serif;
+    --yearFont: "Montserrat";
     --yearFontSize: 20px;
     --yearFontWeight: 700;
 
