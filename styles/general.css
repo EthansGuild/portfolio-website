@@ -12,12 +12,13 @@
     --yearFontSize: 20px;
     --yearFontWeight: 700;
 
-
+    --lightModeContrastForeground: url("../assets/circuitboardWHITE.png");
     --lightModeForeground: url("../assets/circuitboard.png");
+    --lightModeContrastBG: white;
     --lightModeBG: rgb(245, 245, 245);
     --lightModeMouseGreen: rgb(200, 245, 215);
-    --lightModeMouseRed: rgb(245,200,200);
-    --lightModeMouseBlue: rgb(215,230,255);
+    --lightModeMouseRed: rgb(255,215,215);
+    --lightModeMouseBlue: rgb(225,235,255);
     --lightModeMouseGray: rgb(235, 235, 235);
     --lightModeAccent: #ccc;
     --lightModeGlow: rgba(0,0,0,.2);
@@ -25,11 +26,13 @@
     --lightModeTextHover: #aaa;
     --lightModeTextSelected: black;
 
-    --darkModeForeground: url("../assets/circuitboardDARK.png");
-    --darkModeBG: rgb(12,12,12);
+    --darkModeContrastForeground: url("../assets/circuitboardDARK.png");
+    --darkModeForeground: url("../assets/circuitboardBLACK.png");
+    --darkModeContrastBG: rgb(12,12,12);
+    --darkModeBG: black;
     --darkModeMouseGreen: rgb(10,30,10);
     --darkModeMouseRed: rgb(50,10,10);
-    --darkModeMouseBlue: rgb(15,25,40);
+    --darkModeMouseBlue: rgb(15,25,45);
     --darkModeMouseGray: rgb(30,30,30);
     --darkModeAccent: #333;
     --darkModeGlow: rgba(255,255,255,.2);
@@ -38,7 +41,9 @@
     --darkModeTextSelected: white;
 
     /* use light mode by default */
+    --curModeContrastForeground: var(--lightModeContrastForeground);
     --curModeForeground: var(--lightModeForeground);
+    --curModeContrastBG: var(--lightModeContrastBG);
     --curModeBG: var(--lightModeBG);
     --curModeMouseGreen: var(--lightModeMouseGreen);
     --curModeMouseRed: var(--lightModeMouseRed);
@@ -65,7 +70,12 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 h3 {
+    scroll-margin-top: 60px;
     color: var(--curModeText);
     font-family: var(--headerFont);
     font-weight: var(--headerFontWeight);
@@ -132,8 +142,16 @@ footer {
     padding: 0 15% 0 15%;
     display: flex;
     
-    background: var(--curModeBG);
+    background: var(--curModeContrastBG);
     box-shadow: 0 0 10px var(--curModeGlow);
+}
+
+footer h1 {
+    text-shadow:
+    2px 2px 0 var(--curModeBG),
+    -2px 2px 0 var(--curModeBG),
+    -2px -2px 0 var(--curModeBG),
+    2px -2px 0 var(--curModeBG);
 }
 
 .footer-left {

@@ -15,7 +15,7 @@
     box-shadow: 0 0 10px var(--curModeGlow);
     background:
         /* top layer */
-        var(--curModeForeground),
+        var(--curModeContrastForeground),
         
         radial-gradient(
             circle 500px at var(--mouseX) var(--mouseY),
@@ -23,7 +23,7 @@
             rgba(255,0,0,0)
         ),
         
-        var(--curModeBG);
+        var(--curModeContrastBG);
         /* bottom layer */
     background-repeat: repeat, no-repeat;
     animation: scrollBGGray 80s linear infinite;
@@ -49,10 +49,10 @@ label {
     font-weight: var(--headerFontWeight);
     font-size: calc(var(--headerFontSize)*0.8);
     text-shadow:
-    2px 2px 0 var(--curModeBG),
-    -2px 2px 0 var(--curModeBG),
-    -2px -2px 0 var(--curModeBG),
-    2px -2px 0 var(--curModeBG);
+    2px 2px 0 var(--curModeContrastBG),
+    -2px 2px 0 var(--curModeContrastBG),
+    -2px -2px 0 var(--curModeContrastBG),
+    2px -2px 0 var(--curModeContrastBG);
 }
 
 input {
@@ -61,7 +61,7 @@ input {
     
     border: none;
     border-radius: 5px;
-    background-color: var(--curModeBG);
+    background-color: var(--curModeContrastBG);
     box-shadow: 0 0 10px var(--curModeGlow);
 
     color: var(--curModeText);
@@ -80,7 +80,7 @@ textarea {
     
     border: none;
     border-radius: 5px;
-    background-color: var(--curModeBG);
+    background-color: var(--curModeContrastBG);
     box-shadow: 0 0 10px var(--curModeGlow);
 
     color: var(--curModeText);
@@ -92,13 +92,13 @@ textarea {
 
 button[type="submit"] {
     display: block;
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 5px 10px;
 
     border: none;
     border-radius: 5px;
-    background-color: rgba(0,200,0,0.5);
-    
+    background-color: rgba(0,200,0,0.6);
+    box-shadow: 0 0 10px var(--curModeGlow);
     color: var(--curModeBG);
     font-family: var(--headerFont);
     font-weight: var(--headerFontWeight);
@@ -106,9 +106,9 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: rgba(0,200,0,0.8);
+    background-color: rgba(0,200,0,0.9);
 }
 
 button[type="submit"][disabled] {
-    background-color: rgba(200,0,0,0.5);
+    background-color: rgba(200,0,0,0.6);
 }

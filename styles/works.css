@@ -13,6 +13,22 @@
     box-shadow: 0 0 10px var(--curModeGlow);
 }
 
+.works h1 {
+    text-shadow:
+    2px 2px 0 var(--curModeContrastBG),
+    -2px 2px 0 var(--curModeContrastBG),
+    -2px -2px 0 var(--curModeContrastBG),
+    2px -2px 0 var(--curModeContrastBG);
+}
+
+.works p {
+    text-shadow:
+    1px 1px 0 var(--curModeContrastBG),
+    -1px 1px 0 var(--curModeContrastBG),
+    -1px -1px 0 var(--curModeContrastBG),
+    1px -1px 0 var(--curModeContrastBG);
+}
+
 /* Left side: 70% */
 .works-left {
     flex: 0 0 70%;
@@ -26,7 +42,7 @@
     
     background:
         /* top layer */
-        var(--curModeForeground),
+        var(--curModeContrastForeground),
         
         radial-gradient(
             circle 500px at var(--mouseX) var(--mouseY),
@@ -34,7 +50,7 @@
             rgba(255,0,0,0)
         ),
         
-        var(--curModeBG);
+        var(--curModeContrastBG);
         /* bottom layer */
     background-repeat: repeat, no-repeat;
     animation: scrollBGBlue 80s linear infinite;
@@ -92,7 +108,7 @@
     border-left: 2px solid var(--curModeAccent);
     background:
         /* top layer */
-        var(--curModeForeground),
+        var(--curModeContrastForeground),
         
         radial-gradient(
             circle 500px at var(--mouseX) var(--mouseY),
@@ -100,7 +116,7 @@
             rgba(255,0,0,0)
         ),
         
-        var(--curModeBG);
+        var(--curModeContrastBG);
         /* bottom layer */
     background-repeat: repeat, no-repeat;
     animation: scrollBGGray 80s linear infinite;
@@ -112,7 +128,7 @@
     margin: 0px auto 25px 0px;
     padding: 0px 20px 15px 20px;
     
-    background-color: var(--curModeBG);
+    background-color: var(--curModeContrastBG);
     border-radius: 15px;
     box-shadow: 0 0 10px var(--curModeGlow);
 }
@@ -170,10 +186,10 @@
     cursor: pointer;
 
     text-shadow:
-    1px 1px 0 var(--curModeBG),
-    -1px 1px 0 var(--curModeBG),
-    -1px -1px 0 var(--curModeBG),
-    1px -1px 0 var(--curModeBG);
+    1px 1px 0 var(--curModeContrastBG),
+    -1px 1px 0 var(--curModeContrastBG),
+    -1px -1px 0 var(--curModeContrastBG),
+    1px -1px 0 var(--curModeContrastBG);
 }
 
 .project-list li:hover {
@@ -205,5 +221,6 @@
 
     .legend p {
         display: inline-block;
+        text-align: left;
     }
 }

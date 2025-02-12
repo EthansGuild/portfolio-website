@@ -2,9 +2,9 @@
     display: inline-block;
     padding: 14px 20px;
     text-align: center;
-    text-shadow : 0 0 5px var(--curModeBG), 0 0 5px var(--curModeBG),
-                  0 0 10px var(--curModeBG), 0 0 10px var(--curModeBG),
-                  0 0 20px var(--curModeBG), 0 0 20px var(--curModeBG);
+    text-shadow : 0 0 5px var(--curModeContrastBG), 0 0 5px var(--curModeContrastBG),
+                  0 0 10px var(--curModeContrastBG), 0 0 10px var(--curModeContrastBG),
+                  0 0 20px var(--curModeContrastBG), 0 0 20px var(--curModeContrastBG);
 
     font-family: var(--navFont);
     font-weight: 800;
@@ -34,7 +34,7 @@
 
     background:
         /* top layer */
-        var(--curModeForeground),
+        var(--curModeContrastForeground),
         
         radial-gradient(
             circle 500px at var(--mouseX) var(--mouseY),
@@ -42,7 +42,7 @@
             rgba(255,0,0,0)
         ),
         
-        var(--curModeBG);
+        var(--curModeContrastBG);
         /* bottom layer */
     
     background-repeat: repeat, no-repeat;

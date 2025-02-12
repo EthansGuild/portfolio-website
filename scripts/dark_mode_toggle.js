@@ -7,7 +7,9 @@ if (darkModeToggle && darkModeLabel) {
     darkModeToggle.addEventListener('change', () => {
         if (darkModeToggle.checked) {
             darkModeLabel.innerHTML = 'Light Mode';
+            cssGlobals.setProperty('--curModeContrastForeground', 'var(--darkModeContrastForeground)');
             cssGlobals.setProperty('--curModeForeground', 'var(--darkModeForeground)');
+            cssGlobals.setProperty('--curModeContrastBG', 'var(--darkModeContrastBG)');
             cssGlobals.setProperty('--curModeBG', 'var(--darkModeBG)');
             cssGlobals.setProperty('--curModeMouseGreen', 'var(--darkModeMouseGreen)');
             cssGlobals.setProperty('--curModeMouseRed', 'var(--darkModeMouseRed)');
@@ -20,7 +22,9 @@ if (darkModeToggle && darkModeLabel) {
             cssGlobals.setProperty('--curModeTextSelected', 'var(--darkModeTextSelected)');
         } else {
             darkModeLabel.innerHTML = 'Dark Mode';
+            cssGlobals.setProperty('--curModeContrastForeground', 'var(--lightModeContrastForeground)');
             cssGlobals.setProperty('--curModeForeground', 'var(--lightModeForeground)');
+            cssGlobals.setProperty('--curModeContrastBG', 'var(--lightModeContrastBG)');
             cssGlobals.setProperty('--curModeBG', 'var(--lightModeBG)');
             cssGlobals.setProperty('--curModeMouseGreen', 'var(--lightModeMouseGreen)');
             cssGlobals.setProperty('--curModeMouseRed', 'var(--lightModeMouseRed)');

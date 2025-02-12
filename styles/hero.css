@@ -13,7 +13,7 @@
     box-shadow: 0 0 10px var(--curModeGlow);
     background:
         /* top layer */
-        var(--curModeForeground),
+        var(--curModeContrastForeground),
         
         radial-gradient(
             circle 500px at var(--mouseX) var(--mouseY),
@@ -21,7 +21,7 @@
             rgba(255,0,0,0)
         ),
         
-        var(--curModeBG);
+        var(--curModeContrastBG);
         /* bottom layer */
     background-repeat: repeat, no-repeat;
     animation: scrollBGGray 80s linear infinite;
@@ -41,6 +41,22 @@
     mask-image: linear-gradient(to left,
         rgba(0,0,0,1) 50%,
         rgba(0,0,0,0) 100%);
+}
+
+.scrollHero h1 {
+    text-shadow:
+    2px 2px 0 var(--curModeContrastBG),
+    -2px 2px 0 var(--curModeContrastBG),
+    -2px -2px 0 var(--curModeContrastBG),
+    2px -2px 0 var(--curModeContrastBG);
+}
+
+.scrollHero p {
+    text-shadow:
+    1px 1px 0 var(--curModeContrastBG),
+    -1px 1px 0 var(--curModeContrastBG),
+    -1px -1px 0 var(--curModeContrastBG),
+    1px -1px 0 var(--curModeContrastBG);
 }
 
 @media (max-width: 670px) {
