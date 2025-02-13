@@ -1,5 +1,10 @@
 let currentProject = "";
 
+const collaborative_image_url = "../assets/tags/collaborative.png";
+const academic_image_url = "../assets/tags/academic.png";
+const interactive_image_url = "../assets/tags/interactive.png";
+const cinematic_image_url = "../assets/tags/cinematic.png";
+
 const projects = [
   {
     id: "2025.B",
@@ -7,7 +12,9 @@ const projects = [
     embedURL: "https://ethanbattaglia.com/",
     description: `It's what you see right now! It's a combination of a few weeks of 
     brainstorming, raw HTML, CSS, and Javascript. I hope you like it!<br><br>Completed in February 2025.`,
-    tags: ["<span title=\"Interactive\">🕹️</span>"]
+    tags: [
+      { name: "Interactive", icon: interactive_image_url }
+    ]
   },
   {
     id: "2025.A",
@@ -16,7 +23,10 @@ const projects = [
     description: `I built a part in a large Geometry Dash collaboration called \"Adrenadash\"! 
     The decoration and gameplay is heavily inspired by the platformer game \"Celeste\". 
     The part I made is timestamped in the video embed.<br><br>Completed in February 2025.`,
-    tags: ["<span title=\"Collaborative\">👥</span>","<span title=\"Interactive\">🕹️</span>"]
+    tags: [
+      { name: "Collaborative", icon: collaborative_image_url },
+      { name: "Interactive", icon: interactive_image_url }
+    ]
   },
   {
     id: "2024.J",
@@ -31,7 +41,10 @@ const projects = [
     phase we executed/interpreted the code in Java. The image above shows our Symbol Table for the project which 
     helped SO MUCH with scoping and type checking.<br><br>
     Completed in December 2024.`,
-    tags: ["<span title=\"Collaborative\">👥</span>","<span title=\"Academic\">🎓</span>"]
+    tags: [
+      { name: "Collaborative", icon: collaborative_image_url },
+      { name: "Academic", icon: academic_image_url }
+    ]
   },
   {
     id: "2024.I",
@@ -43,7 +56,9 @@ const projects = [
     feature matching, and applied algoirthms like SIFT and ORB to achieve some pretty neat results. The image 
     above shows the best feature matching results I could get after tweaking the parameters a bit!<br><br>
     Completed in December 2024.`,
-    tags: ["<span title=\"Academic\">🎓</span>"]
+    tags: [
+      { name: "Academic", icon: academic_image_url }
+    ]
   },
   {
     id: "2024.H",
@@ -56,7 +71,9 @@ const projects = [
     work, I would work on these small games so that the kids have something to look to for inspiration! If you 
     want to try some of them out, I suggest DEFEND THE GOLD and blob.<br><br>
     Started in October 2024.`,
-    tags: ["<span title=\"Interactive\">🕹️</span>"]
+    tags: [
+      { name: "Interactive", icon: interactive_image_url }
+    ]
   },
   {
     id: "2024.G",
@@ -69,7 +86,9 @@ const projects = [
     Adjacency Matrix that made this enjoyable for me. Pretty fun project! Strange that I did it for an AI 
     class though.<br><br>
     Completed in September 2024.`,
-    tags: ["<span title=\"Academic\">🎓</span>"]
+    tags: [
+      { name: "Academic", icon: academic_image_url }
+    ]
   },
   {
     id: "2024.F",
@@ -81,7 +100,10 @@ const projects = [
     on the ENORMOUS \"foryou\" recommendation algorithm, but I also worked on the user's relationships with 
     books (reading & rating) and viewing collections made by users.<br><br>
     Completed in May 2024.`,
-    tags: ["<span title=\"Collaborative\">👥</span>","<span title=\"Academic\">🎓</span>"]
+    tags: [
+      { name: "Collaborative", icon: collaborative_image_url },
+      { name: "Academic", icon: academic_image_url }
+    ]
   },
   {
     id: "2024.E",
@@ -94,7 +116,11 @@ const projects = [
     business logic in the model classes. My role was to work on the shopping cart's functionality and the 
     customization of items when purchasing.<br><br>
     Completed in April 2024.`,
-    tags: ["<span title=\"Collaborative\">👥</span>","<span title=\"Academic\">🎓</span>", "<span title=\"Interactive\">🕹️</span>"]
+    tags: [
+      { name: "Collaborative", icon: collaborative_image_url },
+      { name: "Academic", icon: academic_image_url },
+      { name: "Interactive", icon: interactive_image_url }
+    ]
   },
   {
     id: "2024.D",
@@ -105,7 +131,10 @@ const projects = [
     interest in Steganography, I decided to go for it, and this video is the result. I hope you find it 
     interesting too!<br><br>
     Completed in April 2024.`,
-    tags: ["<span title=\"Academic\">🎓</span>","<span title=\"Cinematic\">📽️</span>"]
+    tags: [
+      { name: "Academic", icon: academic_image_url },
+      { name: "Cinematic", icon: cinematic_image_url }
+    ]
   },
   {
     id: "2024.C",
@@ -119,7 +148,10 @@ const projects = [
     In the end, though, it was worth it, as the opposing group was unable to figure out our secret keys 
     even WITH a known plaintext.<br><br>
     Completed in March 2024.`,
-    tags: ["<span title=\"Collaborative\">👥</span>","<span title=\"Academic\">🎓</span>"]
+    tags: [
+      { name: "Collaborative", icon: collaborative_image_url },
+      { name: "Academic", icon: academic_image_url },
+    ]
   },
   {
     id: "2024.B",
@@ -131,7 +163,10 @@ const projects = [
     in PyGame controlled with the mouse. Then, I integrated my hand detection into the game. More details
     <a href=\"https://devpost.com/software/cv-pong\">here.</a><br><br>
     Completed in February 2024.`,
-    tags: ["<span title=\"Collaborative\">👥</span>","<span title=\"Interactive\">🕹️</span>"]
+    tags: [
+      { name: "Collaborative", icon: collaborative_image_url },
+      { name: "Interactive", icon: interactive_image_url }
+    ]
   },
   {
     id: "2024.A",
@@ -143,9 +178,18 @@ const projects = [
     inspiration to remake the first chapter from Celeste in Geometry Dash. And so I did it. I remade all of 
     the assets, placed them in their exact spots, and many energy drinks later, it was finished.<br><br>
     Completed in January 2024.`,
-    tags: ["<span title=\"Interactive\">🕹️</span>"]
+    tags: [
+      { name: "Interactive", icon: interactive_image_url },
+    ]
   }
 ];
+
+/* tags: [
+  { name: "Collaborative", icon: collaborative_image_url },
+  { name: "Academic", icon: academic_image_url },
+  { name: "Interactive", icon: interactive_image_url },
+  { name: "Cinematic", icon: cinematic_image_url }
+] */
 
 // Select all the "year" containers
 const yearContainers = document.querySelectorAll('.timeline-year');
@@ -194,7 +238,6 @@ function populateProjectDetails(project) {
   const projectYearElem = document.getElementById('projectYear');
   const projectEmbedElem = document.getElementById('projectEmbed');
   const projectDescElem  = document.getElementById('projectDescription');
-  const worksLeftElem = document.querySelector('.works-left');
 
   // Make sure they're visible
   projectTitleElem.style.display = 'block';
@@ -205,7 +248,15 @@ function populateProjectDetails(project) {
 
   // Set text/HTML from the project object
   projectTitleElem.textContent = project.title;
-  projectTagsElem.innerHTML = project.tags.join('');
+  projectTagsElem.innerHTML = "";
+  project.tags.forEach(tag => {
+    const img = document.createElement("img");
+    img.src = tag.icon;
+    img.alt = tag.name;
+    img.title = tag.name;
+    img.classList.add("tag-icon"); // For styling
+    projectTagsElem.appendChild(img);
+  });
   projectYearElem.textContent  = project.id;
   
   if (project.imageURL)
