@@ -75,7 +75,7 @@ html {
 }
 
 h3 {
-    scroll-margin-top: 60px;
+    scroll-margin-top: 80px;
     color: var(--curModeText);
     font-family: var(--headerFont);
     font-weight: var(--headerFontWeight);

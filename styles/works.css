@@ -28,27 +28,6 @@
     -1px -1px 0 var(--curModeContrastBG),
     1px -1px 0 var(--curModeContrastBG);
 }
-
-#projectTags {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    margin-right: 0px;
-    padding: 4px;
-
-    border-radius: 10px;
-    background-color: rgba(128,128,128,0.3);
-    font-size: 0;
-}
-
-#projectTags .tag-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 0px;
-    vertical-align: middle;
-    filter: drop-shadow(0 0 5px var(--curModeGlow))
-    drop-shadow(0 0 2px var(--curModeGlow));
-}
   
 /* Left side: 70% */
 .works-left {
@@ -95,6 +74,27 @@
     color: var(--curModeText);
 }
 
+#projectTags {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    margin-right: 0px;
+    padding: 4px;
+
+    border-radius: 10px;
+    background-color: rgba(150,150,150,0.3);
+    font-size: 0;
+}
+
+#projectTags .tag-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0px;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 5px var(--curModeGlow))
+    drop-shadow(0 0 2px var(--curModeGlow));
+}
+
 .embed iframe {
     width: 100%;
     aspect-ratio: 16/9;
@@ -113,9 +113,8 @@
 /* Right side: 30% */
 .works-right {
     flex: 0 0 30%;
-    padding: 20px 20px 0px 20px;
-    overflow-y: scroll; /* timeline can scroll up/down if large */
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 
     border-left: 2px solid var(--curModeAccent);
     background:
@@ -134,20 +133,31 @@
     animation: scrollBGGray 80s linear infinite;
 }
 
+.timeline {
+    overflow-y: scroll; /* timeline can scroll up/down if large */
+    box-sizing: border-box;
+    padding: 20px 20px 0 20px;
+    min-height: 500px;
+}
+
 .legend {
-    display: table;
+    flex: 1;
+    display: auto;
     text-align: center;
-    margin: 0px auto 25px 0px;
-    padding: 0px 20px 15px 20px;
+    padding: 1px 20px 15px 20px;
+    
+
+    position: -webkit-sticky; /* for safari */
+    position: sticky;
+    bottom: 0;
     
     background-color: var(--curModeContrastBG);
-    border-radius: 15px;
     box-shadow: 0 0 10px var(--curModeGlow);
 }
 
 .legend-item {
     display: flex;
-    align-items: center;
+    justify-content: center;
     gap: 0.5em;
     margin-bottom: 5px;
 }
@@ -225,7 +235,7 @@
     
     padding: 3px;
     border-radius: 5px;
-    background-color: rgba(128,128,128,0.3);
+    background-color: rgba(150,150,150,0.3);
     font-size: 0;
 }
 
@@ -256,15 +266,5 @@
         border-left: 0px;
         border-top: 2px solid var(--curModeAccent);
         overflow-y: auto;
-    }
-
-    .legend {
-        display: block;
-        margin: 0px auto 25px auto;
-        padding: 1px 0 15px 0;
-    }
-
-    .legend-item {
-        justify-content: center;
     }
 }

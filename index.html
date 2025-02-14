@@ -61,20 +61,128 @@
             <!-- LEFT (70%) [preview of selected project] -->
             <div class="works-left">
                 <div class="works-left-content">
-                    <h1 id="projectTitle">Select a Project!</h1>
+                    <h1 id="projectTitle">Select a Project.</h1>
                     <h2 id="projectYear"></h2>
-                    <h2 id="projectTags"></h2>
+                    <h2 id="projectTags" style="display: none;"></h2>
                     <div id="projectEmbed" class="embed">
                         <!-- <iframe src = "...."> goes here -->
                     </div>
-                    <p id="projectDescription">Some fancy embedded content appears above this description.</p>
+                    <p id="projectDescription">Select one of the dropdowns to see my projects from that year.</p>
                 </div>
             </div>
 
 
             <!-- RIGHT (30%) [timeline of projects] -->
-            <div class="works-right">
+            <div class="works-right">    
+                <div class="timeline">
+                    <h1 style="text-align: center; margin-bottom: 10px;">Timeline</h1>
+                    <div class="timeline-year" expanded="0">
+                        <p class="year-label">2025</p>
 
+                        <ul class="project-list">
+                            <li data-id="2025.B">Personal Website
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/interactive.png" alt="Interactive" title="Interactive">
+                                </div>
+                            </li>
+                            <li data-id="2025.A">Adrenadash Part 
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
+                                    <img class="tag-icon" src="assets/tags/interactive.png" title="Interactive">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-year" expanded="0">
+                        <p class="year-label">2024</p>
+
+                        <ul class="project-list">
+                            <li data-id="2024.J">Java Interpreter 
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
+                                    <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
+                                </div>
+                            </li>
+                            <li data-id="2024.I">Feature Matching 
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
+                                </div>
+                            </li>
+                            <li data-id="2024.H">Mini-Games 
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/interactive.png" title="Interactive">
+                                </div>
+                            </li>
+                            <li data-id="2024.G">Graph Traversal 
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
+                                </div>
+                            </li>
+                            <li data-id="2024.F">Library Application 
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
+                                    <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
+                                </div>
+                            </li>
+                            <li data-id="2024.E">Product Web-App 
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
+                                    <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
+                                    <img class="tag-icon" src="assets/tags/interactive.png" title="Interactive">
+                                </div>
+                            </li>
+                            <li data-id="2024.D">Steganography Study 
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
+                                    <img class="tag-icon" src="assets/tags/cinematic.png" title="Cinematic">
+                                </div>
+                            </li>
+                            <li data-id="2024.C">Manual Cipher 
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
+                                    <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
+                                </div>
+                            </li>
+                            <li data-id="2024.B">CV Pong 
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
+                                    <img class="tag-icon" src="assets/tags/interactive.png" title="Interactive">
+                                </div>
+                            </li>
+                            <li data-id="2024.A">Celeste in GD 
+                                <div class="project-tags">
+                                    <img class="tag-icon" src="assets/tags/interactive.png" title="Interactive">
+                                </div>                     
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-year" expanded="0">
+                        <p class="year-label">2023 WIP</p>
+                        
+                        <ul class="project-list">
+                            <li data-id="2023.A">I'm still gathering old project details.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-year" expanded="0">
+                        <p class="year-label">2022 WIP</p>
+                        
+                        <ul class="project-list">
+                            <li data-id="2022.A">I'm still gathering old project details.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-year" expanded="0">
+                        <p class="year-label">2021 & Beyond WIP</p>
+                        
+                        <ul class="project-list">
+                            <li data-id="2021.A">I'm still gathering old project details.</li>
+                        </ul>
+                    </div>
+                </div>
+                
                 <div class="legend">
                     <h1 style="margin: 20px auto">Legend</h1>
                     <div class="legend-item">
@@ -93,121 +201,13 @@
                         <img class="tag-icon" src="assets/tags/cinematic.png" title="Cinematic">
                         <p>Cinematic</p>
                     </div>
-                </div>                  
-                <div class="timeline-year" expanded="0">
-                    <p class="year-label">2025</p>
-
-                    <ul class="project-list">
-                        <li data-id="2025.B">Personal Website
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/interactive.png" alt="Interactive" title="Interactive">
-                            </div>
-                        </li>
-                        <li data-id="2025.A">Adrenadash Part 
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
-                                <img class="tag-icon" src="assets/tags/interactive.png" title="Interactive">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="timeline-year" expanded="0">
-                    <p class="year-label">2024</p>
-
-                    <ul class="project-list">
-                        <li data-id="2024.J">Java Interpreter 
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
-                                <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
-                            </div>
-                        </li>
-                        <li data-id="2024.I">Feature Matching 
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
-                            </div>
-                        </li>
-                        <li data-id="2024.H">Mini-Games 
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/interactive.png" title="Interactive">
-                            </div>
-                        </li>
-                        <li data-id="2024.G">Graph Traversal 
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
-                            </div>
-                        </li>
-                        <li data-id="2024.F">Library Application 
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
-                                <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
-                            </div>
-                        </li>
-                        <li data-id="2024.E">Product Web-App 
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
-                                <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
-                                <img class="tag-icon" src="assets/tags/interactive.png" title="Interactive">
-                            </div>
-                        </li>
-                        <li data-id="2024.D">Steganography Study 
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
-                                <img class="tag-icon" src="assets/tags/cinematic.png" title="Cinematic">
-                            </div>
-                        </li>
-                        <li data-id="2024.C">Manual Cipher 
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
-                                <img class="tag-icon" src="assets/tags/academic.png" title="Academic">
-                            </div>
-                        </li>
-                        <li data-id="2024.B">CV Pong 
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/collaborative.png" title="Collaborative">
-                                <img class="tag-icon" src="assets/tags/interactive.png" title="Interactive">
-                            </div>
-                        </li>
-                        <li data-id="2024.A">Celeste in GD 
-                            <div class="project-tags">
-                                <img class="tag-icon" src="assets/tags/interactive.png" title="Interactive">
-                            </div>                     
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="timeline-year" expanded="0">
-                    <p class="year-label">2023 WIP</p>
-                    
-                    <ul class="project-list">
-                        <li data-id="2023.A">Morse Code Translator <span title="Academic">🎓</span></li>
-                        <li data-id="2023.B">Remote Controlled Car <span title="Academic">🎓</span></li>
-                        <li data-id="2023.C">Bideos 📽️</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-year" expanded="0">
-                    <p class="year-label">2022 WIP</p>
-                    
-                    <ul class="project-list">
-                        <li data-id="2022.A">Some Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool ProjectSome Cool Project</li>
-                        <li data-id="2022.B">Another Project</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-year" expanded="0">
-                    <p class="year-label">2021 & Beyond WIP</p>
-                    
-                    <ul class="project-list">
-                        <li data-id="2021.A">Some Cool Project 🕹️</li>
-                        <li data-id="2021.B">Another Project</li>
-                    </ul>
-                </div>
+                </div>   
             </div>
 
+            
         </div>
 
-        <h3 id="contact">Contact</h3>
+        <h3 id="contact">Contact Me</h3>
         <div class="scrollContact">
             <form action="https://formspree.io/f/manqdorp" method="POST">
                 <table>
