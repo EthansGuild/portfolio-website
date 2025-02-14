@@ -10,8 +10,9 @@ const projects = [
     id: "2025.B",
     title: "Personal Website",
     embedURL: "https://ethanbattaglia.com/",
-    description: `It's what you see right now! It's a combination of a few weeks of 
-    brainstorming, raw HTML, CSS, and Javascript. I hope you like it!<br><br>Completed in February 2025.`,
+    description: `It's what you see right now! Built over the course of a few weeks, it's a combination of
+    brainstorming, writing, Photoshop, raw HTML, CSS, Javascript, and searching for old project files. I hope
+    you like it!<br><br>Completed in February 2025.`,
     tags: [
       { name: "Interactive", icon: interactive_image_url }
     ]

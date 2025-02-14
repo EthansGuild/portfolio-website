@@ -80,13 +80,8 @@ function startCooldown(duration) {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    submit.disabled = true;
-    submit.textContent = 'Sent!';
-    setTimeout(() => {
-        startCooldown(totalCooldown);
-    }, 2000);
-
-/*     submit.textContent = 'Sending...';
+    submitOnCooldown = 999;
+    submit.textContent = 'Sending...';
     const formData = new FormData(form);
     fetch(form.action, {
         method: form.method,
@@ -101,12 +96,14 @@ form.addEventListener('submit', (e) => {
         } else {
             submit.textContent = 'Submission Failed!';
         }
-
-        
+        setTimeout(() => {
+            startCooldown(totalCooldown);
+        }, 2000);
     })
     .catch(error => {
         setTimeout(() => {
             submit.textContent = 'Error: ' + error;
+            submitOnCooldown = 0;
         }, 2000);
-    }); */
+    }); 
 });
