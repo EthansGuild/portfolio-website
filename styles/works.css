@@ -165,7 +165,7 @@
 
 .timeline-year {
     margin-bottom: 30px;
-    border-left: 2px solid var(--curModeAccent);
+    border-left: 2px solid var(--curModeTextHover);
     padding-left: 10px;
 }
 
@@ -266,5 +266,9 @@
         border-left: 0px;
         border-top: 2px solid var(--curModeAccent);
         overflow-y: auto;
+    }
+    
+    .timeline {
+        min-height: 0;
     }
 }

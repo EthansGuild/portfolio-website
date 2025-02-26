@@ -117,7 +117,12 @@ body {
     height: 100%;
 }
 
+
+
 .scrollBody {
+    position: relative;
+    min-height: 100vh;
+
     background:
         /* top layer */
         var(--curModeForeground),
@@ -132,9 +137,25 @@ body {
         /* bottom layer */
     
     background-repeat: repeat, no-repeat;
-    min-height: 100vh;
+    
 
     animation: scrollBGGreen 50s linear infinite;
+}
+
+.scrollBody::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to Left,
+    rgba(0, 0, 0, .1) 0%,
+    rgba(0, 0, 0, 0) 20%
+    ),
+    linear-gradient(to Right,
+    rgba(0, 0, 0, .1) 0%,
+    rgba(0, 0, 0, 0) 20%
+    );
+    z-index: -10;
 }
 
 footer {
