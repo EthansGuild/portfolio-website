@@ -108,7 +108,7 @@ const projects = [
   },
   {
     id: "2024.E",
-    title: "Product Web-App",
+    title: "E-Store Website",
     imageURL: "../assets/SWEN261_Project_Architecture.png",
     description: `In a group, I helped build an almost full-stack product website called \"PARTY ROCKERS\" 
     where we sold rare and common rocks alike (not really). We built it using Angular Typescript for the 

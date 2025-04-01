@@ -1,7 +1,7 @@
 const form = document.querySelector('.scrollContact form');
 const submit = form.querySelector('button[type="submit"]');
 const requiredFields = form.querySelectorAll('input[required], textarea[required]');
-const totalCooldown = 120;
+const totalCooldown = 240;
 let submitOnCooldown = 0;
 let cooldownInterval = null;
 
